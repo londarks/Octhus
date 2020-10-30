@@ -1,0 +1,180 @@
+@media only screen and (max-width: 320px) {
+
+   body {
+      font-size: 1em; 
+   }
+
+}
+.title-div{
+  width: 100%;
+  text-align: center;
+  color: rgba(141, 61, 255, 0.685);
+}
+
+.page_conteudo{
+  width: 100%;
+/*  height: 800px;*/
+  margin-top: 7rem;
+/*  background-color: blue;*/
+}
+
+
+.page_news{
+  background-color: rgb(29, 30, 40);
+  border-radius: 8px;
+  box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
+  /*height: 700px;*/
+  margin: 6rem auto 8.1rem auto;
+  /*margin  : 0 0 0 80px;*/
+  width: 60%;
+}
+
+
+#menu{
+    color: rgba(255, 255, 255, 0.685) !important;
+    font-size: 17px !important;
+    font-weight: bold;
+    font-family: 'Lato', sans-serif;
+    padding: 5px;
+    margin: 5px;
+}
+
+.text-title{
+    color: rgba(255, 255, 255, 0.685) !important;
+    font-size: 16px !important;
+    font-weight: bold;
+    font-family: 'Lato', sans-serif;
+}
+
+.text-card{
+    color: rgba(255, 255, 255, 0.685) !important;
+    font-size: 13px !important;
+    font-weight: bold;
+    font-family: 'Lato', sans-serif;
+}
+.text5{
+    color: #fff !important;
+    font-size: 16px !important;
+    font-weight: bold;
+    font-family: 'Lato', sans-serif;
+}
+
+
+.title-anime{
+    color: #f29c12 !important;
+    font-size: 20px !important;
+    font-weight: bold;
+    font-family: 'Lato', sans-serif;
+}
+
+.title-ep{
+    color: white !important;
+    font-size: 20px !important;
+    font-weight: bold;
+    font-family: 'Lato', sans-serif;
+}
+
+.Episodios{
+    color: #17f642 !important;
+    font-size: 16px !important;
+    font-weight: bold;
+    font-family: 'Lato', sans-serif;
+}
+
+
+.image_anime_download{
+  width:500px;
+  height:126px;
+  vertical-align: top;
+  /*margin-left: 2rem;*/
+}
+
+
+figure {
+    display: inline-block;
+    width: 205px;
+    height: 126px;
+    /*margin: 20px;*/
+    background-color: #15171E;
+    text-align: center;
+    margin-block-start: 5px;
+    margin-block-end: 5px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+figure img {
+  background-color: #15171E;
+  vertical-align: top;
+}
+figure figcaption {
+  background-color: #15171E;
+  text-align: center;
+}
+
+.BlueButton{
+    background: #08a8d1;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.purpleButton{
+    background: rgba(141, 61, 255, 0.685);;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.content-download{
+  height:128px;
+  width: 74%;
+  float: left;
+  position: relative;
+  background-color: #f29c12;
+
+}
+
+.content-image{
+  height:128px;
+  width: 26%;
+  float: left;
+  position: relative;
+  background-color: #f29c12;
+}
+
+.content-animes{
+  background-color: #f29c12;
+  width: 97%;
+  height: 128px;
+  margin: 1em;
+}
+
+.content-display0{
+  background-color: #101117;
+  height: 33%;
+  margin-block-start: 5px;
+  margin-block-end: 0px;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  text-align: center;
+}
+
+.content-display1{
+  background-color: #101117;
+  height: 33%;
+  text-align: center;
+  border: 5px 5px 5px 5px solid red;
+}
+
+
+/*#101117*/

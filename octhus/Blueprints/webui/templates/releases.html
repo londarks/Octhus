@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- ##################import files#################### -->
+    <link rel="stylesheet" href="{{ url_for('.static',    filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('.static',    filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('.static',    filename='css/now-ui-kit.css') }}">
+    <!-- ################################################## -->
+    <!--<link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/now-ui-kit.css"> -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,600,700,800,900&display=swap" rel="stylesheet">
+    <title>Octhus</title>
+    <link rel="icon" href="{{ url_for('.static',    filename='assets/logo.png') }}">
+    <link rel="stylesheet" href="{{ url_for('.static',    filename='css/animestc.css') }}">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-transparent">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <img src="{{ url_for('.static',    filename='assets/menuIcon.svg') }}" width="20px" height="20px" style="max-width: none !important;">
+    </button>
+    <img src="{{ url_for('.static',    filename='assets/logo.png') }}" width="50" height="50">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left: 20px !important">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ url_for('webui.index') }}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('webui.season') }}">Temporadas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('webui.releases') }}">Lançados</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Dashboard</a>
+            </li>
+        </ul>
+        <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Documentação
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">API</a>
+                <a class="dropdown-item" href="/tutorials">Tutorial</a>
+            </div>
+        </div>
+        <div class="nav-item">
+            <a class="nav-link" href="#">Sobre</a>
+        </div>
+        {% if cookie == None %}
+            <a href="#"><button class="btn login-btn btn-outline-accent my-2 my-sm-0" style="font-size: 10px !important;font-family: poppins !important;">lOGIN</button></a>
+        {% else %}
+            <a href="#"><button class="btn login-btn btn-outline-accent my-2 my-sm-0" style="font-size: 10px !important;font-family: poppins !important;">logoUT</button></a>
+        {% endif %}
+    </div>
+</nav>
+
+
+<div class="title-div">
+    <h1 class="display-5 title">Anime Releases</h1>
+</div>
+
+<div class="page_conteudo">
+    <div class="page_news">
+        {%for i in range(anime['name']|length) %}
+        <div class="content-animes">
+            <div class="content-image">
+                <figure>
+                        <img class="image_anime_download" src="{{anime['url'][i]}}">
+                </figure>
+            </div>
+            <div class="content-download">
+                <div class="content-display0">
+                    <span class="title-anime">{{anime['name'][i]}}</span>
+                    <span class="title-ep">{{anime['episodes'][i]}}</span>
+                </div>
+                <div class="content-display1">
+                    <button class="BlueButton">MP4</button>
+                </div>
+                <div class="content-display1">
+                    <a href="{{anime['download'][i]}}">
+                        <button class="purpleButton"> Download</button>
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+        {%endfor%}
+        <div id="container-rodape" style="clear: both;">
+    </div>
+</div>
+
+<div class="page_end">
+    <div class="start">
+        <div class="card">
+            <div class="card-body gs-card">
+                <!-- <div class="title">Ready to try Bot?</div>
+                <div class="subtitle">Invite Bot and start giving your server cool perks!</div> -->
+                <br />
+                <!-- <a class="btn btn-primary btn-lg" href="#start_link" role="button">Get started</a> -->
+            </div><br />
+        </div>
+    </div>
+    <div class="footer">
+        <div class="bot-footer">
+            <img src="{{ url_for('.static',    filename='assets/londarks.png') }}" width="50" height="50"><br />
+            Copyright © Octhus - 2020
+        </div><br/>
+        <div class="nouridio">developed by <a href="https://twitter.com/londarks"> Londarks</a></div><br>
+        <div class="nouridio">design by <a href="https://twitter.com/Nouridio"> nouridio</a></div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script type="text/javascript"
+         src="{{ url_for('.static', filename='js/now-ui-kit.min.js') }}"></script>
+</body>
+</html>

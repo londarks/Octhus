@@ -1,0 +1,8 @@
+[default]
+TITLE = "Onigiri"
+EXTENSIONS = [
+	"octhus.Blueprints.webui",
+	"octhus.extension.database",
+]
+
+[production]
