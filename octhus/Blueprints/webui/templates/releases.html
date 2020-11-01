@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,600,700,800,900&display=swap" rel="stylesheet">
     <title>Octhus</title>
     <link rel="icon" href="{{ url_for('.static',    filename='assets/logo.png') }}">
-    <link rel="stylesheet" href="{{ url_for('.static',    filename='css/animestc.css') }}">
+    <link rel="stylesheet" href="{{ url_for('.static',    filename='css/animes.css') }}">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-transparent">
@@ -79,10 +79,11 @@
                     <span class="title-ep">{{anime['episodes'][i]}}</span>
                 </div>
                 <div class="content-display1">
-                    <button class="BlueButton">MP4</button>
+                    <button class="Online">Online</button>
                 </div>
                 <div class="content-display1">
-                    <a href="{{anime['download'][i]}}">
+                    <span class="mp4">MP4</span>
+                    <a href="#">
                         <button class="purpleButton"> Download</button>
                     </a>
                 </div>

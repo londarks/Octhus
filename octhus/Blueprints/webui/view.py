@@ -1,7 +1,7 @@
 from flask import request, jsonify, render_template, redirect, url_for, send_file
 
 #import de funções de retorno
-from octhus.extension.animeConfig import push_animes, animeReleases
+from octhus.extension.animeConfig import *
 
 def index():
 	return render_template("index.html")

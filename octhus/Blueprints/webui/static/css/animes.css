@@ -133,6 +133,7 @@ figure figcaption {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    text-decoration: none;
 }
 
 .content-download{
@@ -168,12 +169,31 @@ figure figcaption {
   margin-inline-end: 0px;
   text-align: center;
 }
+.Online{
+  color: white;
+  background: transparent;
+  border: 1px solid white;
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 2px;
+  margin: 5px;
+  text-decoration: none;
+}
+/*08a8d1*/
 
+.mp4{
+  color: white;
+  background: #08a8d1;
+  border: 1px solid #08a8d1;
+  font-size: 16px;
+  border-radius: 5px;
+  margin: 2px;
+  text-decoration: none;
+}
 .content-display1{
   background-color: #101117;
   height: 33%;
-  text-align: center;
-  border: 5px 5px 5px 5px solid red;
+  border-top: 1px solid rgba(192, 192, 192, 1);
 }
 
 

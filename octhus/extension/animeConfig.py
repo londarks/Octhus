@@ -1,4 +1,4 @@
-import time, re, requests
+import time, re, requests, json
 from jikanpy import Jikan
 from bs4 import BeautifulSoup
 
@@ -30,28 +30,33 @@ def push_animes(year=2020, month='winter'):
 
 
 def animeReleases():
-	conect = requests.get('https://www.animestc.com')
-	soup = BeautifulSoup(conect.text, "lxml")
+	page = 1
 	animeList = {}
 	animeList['name'] = []
 	animeList['episodes'] = []
 	animeList['url'] = []
-	animeList['download'] = []
 
-	for i in range(len(soup.find_all('div', {'class': 'tooltip-container'}))):
-		download = soup.find_all('div', {'class': 'tooltip-container'})[i].find_all('a', {'class': 'episode-info-links-item episode-info-links-item-blue'})[2]
-		animeList['download'].append(download['href'])
-		anime = soup.find_all('div', {'class': 'tooltip-container'})[i].find('img',{'class': 'episode-image'})
-		
-		nameEps = re.findall('-.*', anime['alt'])
-		nameAnime = re.findall('.*-', anime['alt'])
+	for a in range(5):
 
-		if len(nameAnime[0]) >= 36:
-			animeList['name'].append(nameAnime[0][36:])
-		else:
-			animeList['name'].append(nameAnime[0].replace('-',''))
-		animeList['episodes'].append(nameEps[0])
-		
-		animeList['url'].append(anime['data-src'])
+		params = (
+			('order', 'created_at'),
+			('direction', 'desc'),
+			('page', page),
+			('ignoreIndex', 'false'),
+			)
+		response = requests.get('https://api2.animestc.com/episodes', params=params)
+		api = response.json()
+		for i in range(len(api['data'])):
+			url = 'https://stc.animestc.com/{}'.format(api['data'][i]['cover']['thumbnailName'])
+			if len(api['data'][i]['series']['slug']) >= 35:
+				name = "{}...".format(api['data'][i]['series']['slug'][:30])
+				animeList['name'].append(name)
+			else:
+				animeList['name'].append(api['data'][i]['series']['slug'])
+			episodio = "Episodio {}".format(api['data'][i]['number'])
+			animeList['episodes'].append(episodio)
+
+			animeList['url'].append(url)
+		page += 1
 		
 	return animeList
